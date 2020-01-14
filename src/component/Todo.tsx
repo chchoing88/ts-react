@@ -1,12 +1,12 @@
 import React from "react";
 import TodoList from "./TodoList";
+import useObservable from "../hooks/useObservable";
+import todoStore from "../store/TodoStore";
 import { ITodoItem } from "../types";
 
-type TodoProps = {
-  todoList: ITodoItem[];
-};
+function Todo() {
+  const todoList = useObservable<ITodoItem[]>(todoStore.todoList$);
 
-function Todo({ todoList }: TodoProps) {
   return <TodoList todoList={todoList}></TodoList>;
 }
 

@@ -3,16 +3,12 @@ import Todo from "./component/Todo";
 import Button from "./component/Button";
 // import logo from './logo.svg';
 // import './App.css';
-import useObservable from "./hooks/useObservable";
 import todoStore from "./store/TodoStore";
-import { ITodoItem } from "./types";
 
 const App: React.FC = () => {
-  const todoList = useObservable<ITodoItem[]>(todoStore.todoList$);
-
   return (
     <>
-      <Todo todoList={todoList} />
+      <Todo />
       <Button
         onClick={e => todoStore.addTodo({ todo: "하이요", isActive: false })}
       ></Button>
