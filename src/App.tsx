@@ -5,9 +5,10 @@ import Button from "./component/Button";
 // import './App.css';
 import useObservable from "./hooks/useObservable";
 import todoStore from "./store/TodoStore";
+import { ITodoItem } from "./types";
 
 const App: React.FC = () => {
-  const todoList = useObservable(todoStore.todoList$);
+  const todoList = useObservable<ITodoItem[]>(todoStore.todoList$);
 
   return (
     <>

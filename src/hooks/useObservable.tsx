@@ -1,7 +1,7 @@
-import {useState, useEffect} from 'react'
-import * as Rx from 'rxjs';
+import { useState, useEffect } from "react";
+import * as Rx from "rxjs";
 
-const useObservable = (observable: Rx.Observable<any>) => {
+function useObservable<T>(observable: Rx.Observable<T>) {
   const [state, setState] = useState();
 
   useEffect(() => {
@@ -10,8 +10,8 @@ const useObservable = (observable: Rx.Observable<any>) => {
   }, [observable]);
 
   return state;
-};
+}
 
-// 종료 시점, pipe, 
+// 종료 시점, pipe,
 
-export default useObservable
+export default useObservable;
